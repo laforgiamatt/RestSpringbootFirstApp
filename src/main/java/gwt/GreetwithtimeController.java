@@ -9,12 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GreetwithtimeController {
 
-	private static final String template = "Hello, %s, the time is %s";
 	private final AtomicLong counter = new AtomicLong();
 
 	@RequestMapping("/welcome")
-	public Greetwithtime greetwithtime(@RequestParam(value="name", defaultValue="World") Date date){
+	public Greetwithtime greetwithtime(@RequestParam Date date){
 		return new Greetwithtime(counter.incrementAndGet(),
-			String.format(template, date));
+			date);
 	}
 }
