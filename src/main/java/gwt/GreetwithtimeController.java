@@ -12,7 +12,7 @@ public class GreetwithtimeController {
 	private final AtomicLong counter = new AtomicLong();
 
 	@RequestMapping("/welcome")
-	public Greetwithtime greetwithtime(@RequestParam Date date){
+	public Greetwithtime greetwithtime(@RequestParam()  Date date){
 		return new Greetwithtime(counter.incrementAndGet(),
 			date);
 	}
